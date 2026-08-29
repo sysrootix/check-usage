@@ -1,12 +1,12 @@
 # X launch post
 
-Paste into X. Attach **one** image. Prefer the real product shot; the generated card is a fallback if the crop feels too busy.
+Paste into X. Attach **one** image. Use the 16:9 card — real English UI on a dark studio background.
 
-- Product screenshot (recommended): `docs/screenshot-wide.png`
-- Tight crop of pill + popover: `docs/screenshot.png`
-- Generated 16:9 card: `docs/x-card.png`
+- **Attach this:** `docs/x-card.jpg` (same frame as `docs/screenshot-wide.jpg`)
+- README hero (4:3, no wordmark): `docs/screenshot.jpg`
+- Pill only: `docs/screenshot-panel.png`
 
-Repo (live after push): https://github.com/sysrootix/check-usage
+Repo: https://github.com/sysrootix/check-usage
 
 ---
 
@@ -36,7 +36,7 @@ https://github.com/sysrootix/check-usage
 
 ## Alt text for the image
 
-Screenshot of CheckUsage on macOS: a dark vertical pill on the right edge with circular usage rings, and a popover showing Cursor Ultra limits, reset dates, and a spend-pace forecast.
+CheckUsage on a dark studio background: English UI. A Cursor Usage popover shows Included 13%, Auto 15%, Other models 1%, and a spend-pace warning. A slim vertical pill on the right shows two usage rings at 4% and 13%. Wordmark: CheckUsage. Tagline: AI usage limits on your Mac. No extra login. No telemetry.
 
 ---
 

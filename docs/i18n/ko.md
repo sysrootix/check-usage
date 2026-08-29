@@ -5,7 +5,7 @@
 이미 이 Mac에 로그인해 둔 AI 도구의 한도 — 화면 가장자리의 얇은 **필**과 링, 상세 팝오버. 추가 로그인 없음. 텔레메트리 없음.
 
 <p align="center">
-  <img src="../screenshot.png" alt="CheckUsage 필과 Cursor 한도 팝오버" width="720">
+  <img src="../screenshot.jpg" alt="CheckUsage 필과 Cursor 한도 팝오버" width="720">
 </p>
 
 CheckUsage는 메뉴 막대에 상주하며 어두운 필을 아무 가장자리에나 고정할 수 있습니다. 각 링은 실제 제공자 마크입니다. 올리면 미리 보고, 클릭하면 고정됩니다. 팝오버에는 세션 / 주간 / 플랜, 초기화 시각, 소모 속도 카드가 있습니다. 주기에서 얼마나 썼는지, 예정보다 빠른지, 이 속도라면 언제 바닥날지.

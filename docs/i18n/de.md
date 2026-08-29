@@ -5,7 +5,7 @@
 Limits der KI-Tools, bei denen Sie auf dem Mac schon angemeldet sind — eine schmale **Pille am Bildschirmrand** mit Ringen und ein Detail-Popover. Kein Extra-Login. Keine Telemetrie.
 
 <p align="center">
-  <img src="../screenshot.png" alt="CheckUsage-Pille und Cursor-Limit-Popover" width="720">
+  <img src="../screenshot.jpg" alt="CheckUsage-Pille und Cursor-Limit-Popover" width="720">
 </p>
 
 CheckUsage sitzt in der Menüleiste und kann eine dunkle Pille an jeder Kante halten. Jeder Ring ist eine echte Anbietermarke. Hover zeigt die Fenster, Klick pinnt sie. Im Popover: Sitzung / Woche / Tarif, Reset-Zeit und ein Tempo-Karte: wie viel vom Zyklus weg ist, ob Sie vorauslaufen, und wann dieses Tempo das Limit leeren würde.

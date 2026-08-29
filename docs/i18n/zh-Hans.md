@@ -5,7 +5,7 @@
 查看 Mac 上**已经登录**的 AI 工具额度 — 贴在屏幕边缘的细长**胶囊**和圆环，点开即可看明细。无需再登一次。无遥测。
 
 <p align="center">
-  <img src="../screenshot.png" alt="CheckUsage 胶囊与 Cursor 额度弹层" width="720">
+  <img src="../screenshot.jpg" alt="CheckUsage 胶囊与 Cursor 额度弹层" width="720">
 </p>
 
 CheckUsage 在菜单栏运行，也可把深色胶囊钉在任意边缘。每个圆环都是真实的服务商标识。悬停预览，单击固定。弹层显示会话 / 每周 / 套餐用量、重置时间，以及消耗节奏：本周期已用多少、是否超前、按此速度会在哪一天用完。

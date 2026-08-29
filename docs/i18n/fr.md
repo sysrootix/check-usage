@@ -5,7 +5,7 @@
 Les quotas des outils IA déjà connectés sur votre Mac — une **pilule** fine au bord de l’écran, des anneaux, un popover de détail. Pas de second login. Pas de télémétrie.
 
 <p align="center">
-  <img src="../screenshot.png" alt="Pilule CheckUsage et popover des quotas Cursor" width="720">
+  <img src="../screenshot.jpg" alt="Pilule CheckUsage et popover des quotas Cursor" width="720">
 </p>
 
 CheckUsage vit dans la barre des menus et peut coller une pilule sombre à n’importe quel bord. Chaque anneau est la vraie marque du fournisseur. Survol pour jeter un œil, clic pour épingler. Le popover montre session / semaine / offre, l’heure de reset, et une carte de rythme : combien du cycle est parti, si vous êtes en avance, et à quelle date ce rythme viderait la limite.

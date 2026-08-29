@@ -5,7 +5,7 @@
 Limites das ferramentas de IA em que você já entrou neste Mac — uma **pílula** fina na borda, anéis e um popover de detalhe. Sem outro login. Sem telemetria.
 
 <p align="center">
-  <img src="../screenshot.png" alt="Pílula CheckUsage e popover de limites do Cursor" width="720">
+  <img src="../screenshot.jpg" alt="Pílula CheckUsage e popover de limites do Cursor" width="720">
 </p>
 
 O CheckUsage fica na barra de menus e pode pregar uma pílula escura em qualquer borda. Cada anel é a marca real do provedor. Passe o mouse para espiar; clique para fixar. O popover mostra sessão / semana / plano, quando reinicia e um cartão de ritmo: quanto do ciclo já foi, se você está adiantado e em que data esse ritmo esgotaria o limite.

@@ -5,7 +5,7 @@
 Usage limits for the AI tools already signed in on your Mac — a slim **edge pill** with circular rings, plus a detail popover. No extra login. No telemetry.
 
 <p align="center">
-  <img src="docs/screenshot.png" alt="CheckUsage pill and Cursor limits popover" width="720">
+  <img src="docs/screenshot.jpg" alt="CheckUsage pill and Cursor limits popover" width="720">
 </p>
 
 CheckUsage lives in the menu bar and can pin a dark pill to any screen edge. Each ring is a real provider mark. Hover a ring to peek at the windows; click to pin. The popover shows session / weekly / plan usage, when it resets, and a spend-pace card: how much of the cycle is gone, whether you’re ahead of the plan, and the date this rate would empty the limit.

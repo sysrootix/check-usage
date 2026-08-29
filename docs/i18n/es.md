@@ -5,7 +5,7 @@
 Límites de las herramientas de IA en las que ya has iniciado sesión en el Mac — una **píldora** fina en el borde con anillos y un popover de detalle. Sin otro login. Sin telemetría.
 
 <p align="center">
-  <img src="../screenshot.png" alt="Píldora CheckUsage y popover de límites de Cursor" width="720">
+  <img src="../screenshot.jpg" alt="Píldora CheckUsage y popover de límites de Cursor" width="720">
 </p>
 
 CheckUsage vive en la barra de menú y puede fijar una píldora oscura en cualquier borde. Cada anillo es la marca real del proveedor. Al pasar el ratón se asoma; al clic se fija. El popover muestra sesión / semana / plan, cuándo se reinicia y una tarjeta de ritmo: cuánto ciclo se ha gastado, si vas por delante y en qué fecha se agotaría a este ritmo.
