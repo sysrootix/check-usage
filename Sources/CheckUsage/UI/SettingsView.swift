@@ -232,10 +232,13 @@ struct SettingsView: View {
                 }
             }
             Section(L10n.t("about")) {
-                LabeledContent("CheckUsage", value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")
+                LabeledContent("CheckUsage", value: AppInfo.shortVersion)
                 Text(L10n.t("privacy_note"))
                     .font(.callout)
                     .foregroundStyle(.secondary)
+                Link(L10n.t("github_repo"), destination: AppInfo.githubURL)
+                Link(L10n.t("github_issues"), destination: AppInfo.issuesURL)
+                Link(L10n.t("github_license"), destination: AppInfo.licenseURL)
             }
             Section(L10n.t("settings_file")) {
                 Text(settings.settingsFilePath)

@@ -1,4 +1,4 @@
-.PHONY: project icon test app clean
+.PHONY: project icon test app zip clean
 
 project: icon
 	xcodegen generate
@@ -27,6 +27,11 @@ app: project
 		CODE_SIGNING_ALLOWED=NO
 	cp -R build/Products/Release/CheckUsage.app dist/CheckUsage.app
 	@echo "Built dist/CheckUsage.app"
+
+zip: app
+	rm -f dist/CheckUsage.app.zip
+	ditto -c -k --keepParent dist/CheckUsage.app dist/CheckUsage.app.zip
+	@echo "Built dist/CheckUsage.app.zip"
 
 clean:
 	rm -rf build dist CheckUsage.xcodeproj .swiftpm

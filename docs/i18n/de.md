@@ -12,6 +12,8 @@ CheckUsage sitzt in der Menüleiste und kann eine dunkle Pille an jeder Kante ha
 
 **Standard:** oben rechts und **gesperrt**, Schließen bei Klick daneben, `⌥⌘U` blendet das Widget, `⌥⌘L` öffnet die letzten Limits. Entsperren zum Ziehen — es rastet an einer Kante ein. Cursors Reset ist das monatliche Abrechnungsdatum, nicht „diesen Samstag“.
 
+**Status:** wird aktiv gepflegt. Inoffizielle Zähler können ohne Vorankündigung brechen — siehe [SECURITY.md](../../SECURITY.md) und [CHANGELOG.md](../../CHANGELOG.md).
+
 ## Was es ist
 
 Ein Blick-Instrument für alle, die mehrere KI-Coding-Agenten auf einem Mac fahren. Der knappste Rest kann in der Menüleiste stehen. Ringe an der Kante. Details per Hover oder Klick. Kein Kostenbuch, kein Auslesen lokaler Chats.
@@ -96,6 +98,10 @@ make app
 ```
 
 Siehe [CONTRIBUTING.md](../../CONTRIBUTING.md).
+
+## Dokumentation
+
+[Architektur](../ARCHITECTURE.md) · [Contributing](../../CONTRIBUTING.md) · [Sicherheit](../../SECURITY.md) · [Changelog](../../CHANGELOG.md) · [Issues / Roadmap](https://github.com/sysrootix/check-usage/issues)
 
 ## Lizenz
 

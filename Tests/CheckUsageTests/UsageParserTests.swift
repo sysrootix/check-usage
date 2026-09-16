@@ -189,4 +189,126 @@ final class UsageParserTests: XCTestCase {
         XCTAssertEqual(UsageTone.from(percent: 73), .warn)
         XCTAssertEqual(UsageTone.from(percent: 95), .critical)
     }
+
+    func testClaudeOpusSonnetAndExtraUsage() throws {
+        L10n.language = .en
+        let json = try JSONValue.parse(Data("""
+        {
+          "five_hour": { "utilization": 88.4, "resets_at": "2026-08-29T10:00:00Z" },
+          "seven_day": { "utilization": 31.2, "resets_at": "2026-09-04T14:00:00Z" },
+          "seven_day_opus": { "utilization": 64, "resets_at": "2026-09-04T14:00:00Z" },
+          "seven_day_sonnet": { "percent": 9, "resets_at": "2026-09-04T14:00:00Z" },
+          "extra_usage": { "is_enabled": true, "used_credits": 1250, "monthly_limit": 5000 }
+        }
+        """.utf8))
+        let snapshot = UsageParsers.claude(json)
+        XCTAssertEqual(snapshot.windows.count, 5)
+        XCTAssertEqual(snapshot.windows[0].usedPercent, 88.4, accuracy: 0.01)
+        XCTAssertEqual(snapshot.windows[2].title, "Weekly Opus")
+        XCTAssertEqual(snapshot.windows[3].usedPercent, 9, accuracy: 0.01)
+        XCTAssertEqual(snapshot.windows[4].id, "extra")
+        XCTAssertEqual(snapshot.windows[4].usedPercent, 25, accuracy: 0.01)
+        XCTAssertEqual(snapshot.windows[4].footnote, "$12.50 / $50.00")
+    }
+
+    func testClaudeDisabledExtraUsageIsIgnored() throws {
+        let json = try JSONValue.parse(Data("""
+        {
+          "five_hour": { "utilization": 10 },
+          "extra_usage": { "is_enabled": false, "used_credits": 99, "monthly_limit": 5000 }
+        }
+        """.utf8))
+        let snapshot = UsageParsers.claude(json)
+        XCTAssertEqual(snapshot.windows.count, 1)
+        XCTAssertFalse(snapshot.windows.contains(where: { $0.id == "extra" }))
+    }
+
+    func testCodexCamelCaseExtrasAndCredits() throws {
+        L10n.language = .en
+        let json = try JSONValue.parse(Data("""
+        {
+          "plan_type": "pro",
+          "rateLimits": {
+            "primary": { "usedPercent": 67.5, "windowDurationMins": 300, "resetsAt": 1782770922 },
+            "secondary": { "used_percent": 18, "limit_window_seconds": 604800, "reset_after_seconds": 400000 }
+          },
+          "additional_rate_limits": [
+            { "limit_name": "code_review", "primary_window": { "used_percent": 5, "limit_window_seconds": 86400 } }
+          ],
+          "credits": { "has_credits": true, "balance": 42 }
+        }
+        """.utf8))
+        let snapshot = UsageParsers.codex(json)
+        XCTAssertEqual(snapshot.planName, "pro")
+        XCTAssertEqual(snapshot.windows.count, 4)
+        XCTAssertEqual(snapshot.windows[0].usedPercent, 67.5, accuracy: 0.01)
+        XCTAssertEqual(snapshot.windows[0].title, "Current session")
+        XCTAssertEqual(snapshot.windows[1].title, "Weekly")
+        XCTAssertNotNil(snapshot.windows[1].resetsAt)
+        XCTAssertEqual(snapshot.windows[2].title, "code_review")
+        XCTAssertEqual(snapshot.windows[2].usedPercent, 5, accuracy: 0.01)
+        XCTAssertEqual(snapshot.windows[3].id, "credits")
+        XCTAssertEqual(snapshot.windows[3].footnote, "42")
+    }
+
+    func testCursorIndividualUsageAndMillisCycle() throws {
+        let fetched = DateParser.iso("2026-08-15T12:00:00Z")!
+        let json = try JSONValue.parse(Data("""
+        {
+          "billingCycleEndMs": 1788220800000,
+          "periodStart": "2026-08-01T00:00:00Z",
+          "planName": "Pro",
+          "individualUsage": {
+            "plan": { "used": 800, "limit": 2000 }
+          }
+        }
+        """.utf8))
+        let snapshot = UsageParsers.cursor(json, fetchedAt: fetched)
+        XCTAssertEqual(snapshot.planName, "Pro")
+        XCTAssertEqual(snapshot.primaryPercent, 40, accuracy: 0.01)
+        XCTAssertEqual(snapshot.windows.count, 1)
+        XCTAssertEqual(snapshot.cycleStart, DateParser.iso("2026-08-01T00:00:00Z"))
+        XCTAssertEqual(snapshot.cycleEnd, DateParser.iso("2026-09-01T00:00:00Z"))
+        XCTAssertEqual(snapshot.forecastWindow?.id, "total")
+    }
+
+    func testCursorTinyPercentIsAtLeastOne() {
+        XCTAssertEqual(UsageParsers.cursorVisiblePercent(0.4), 1, accuracy: 0.01)
+        XCTAssertEqual(UsageParsers.cursorVisiblePercent(0), 0, accuracy: 0.01)
+        XCTAssertEqual(UsageParsers.cursorVisiblePercent(12.2), 12.2, accuracy: 0.01)
+    }
+
+    func testCopilotChatCompletionsAndEntitlementFallback() throws {
+        L10n.language = .en
+        let json = try JSONValue.parse(Data("""
+        {
+          "copilot_plan": "pro+",
+          "quota_reset_date": "2026-09-01T00:00:00Z",
+          "quota_snapshots": {
+            "premium_interactions": { "entitlement": 1500, "remaining": 375 },
+            "chat": { "percent_remaining": 80, "unlimited": false },
+            "completions": { "unlimited": true, "percent_remaining": 100 }
+          }
+        }
+        """.utf8))
+        let snapshot = UsageParsers.copilot(json)
+        XCTAssertEqual(snapshot.planName, "pro+")
+        XCTAssertEqual(snapshot.windows.count, 2)
+        XCTAssertEqual(snapshot.primaryPercent, 75, accuracy: 0.01)
+        XCTAssertEqual(snapshot.windows[0].title, "Premium")
+        XCTAssertEqual(snapshot.windows[1].title, "Chat")
+        XCTAssertEqual(snapshot.windows[1].usedPercent, 20, accuracy: 0.01)
+        XCTAssertEqual(snapshot.forecastWindow?.id, "premium")
+        XCTAssertNotNil(snapshot.cycleEnd)
+    }
+
+    func testCopilotEmptySnapshotsStaySignedInShape() throws {
+        let json = try JSONValue.parse(Data("""
+        { "copilot_plan": "free", "quota_snapshots": {} }
+        """.utf8))
+        let snapshot = UsageParsers.copilot(json)
+        XCTAssertEqual(snapshot.planName, "free")
+        XCTAssertTrue(snapshot.windows.isEmpty)
+        XCTAssertEqual(snapshot.primaryPercent, 0, accuracy: 0.01)
+    }
 }

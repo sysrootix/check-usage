@@ -12,6 +12,8 @@ CheckUsage はメニューバーに常駐し、暗いピルを任意の端に固
 
 **初期値:** 右上・**位置ロック**・外側クリックで閉じる。`⌥⌘U` でウィジェット、`⌥⌘L` で前回の上限。ロックを外すとドラッグでき、端に吸着します。Cursor のリセットは月次の課金日であり、「今週の土曜」ではありません。
 
+**ステータス:** 継続メンテナンス中。非公式メーターは予告なく壊れることがあります。[SECURITY.md](../../SECURITY.md) と [CHANGELOG.md](../../CHANGELOG.md) を参照。
+
 ## これは何か
 
 複数の AI コーディングエージェントを一台の Mac で使う人向けの、一目で分かる計器です。メニューバーに最も厳しい残量、端にリング、ホバー/クリックで詳細。家計簿でも、ローカルのチャットログを読むツールでもありません。
@@ -96,6 +98,10 @@ make app
 ```
 
 [CONTRIBUTING.md](../../CONTRIBUTING.md) を参照。
+
+## ドキュメント
+
+[アーキテクチャ](../ARCHITECTURE.md) · [Contributing](../../CONTRIBUTING.md) · [セキュリティ](../../SECURITY.md) · [Changelog](../../CHANGELOG.md) · [Issues / ロードマップ](https://github.com/sysrootix/check-usage/issues)
 
 ## ライセンス
 
