@@ -52,4 +52,36 @@ final class ResetCopyTests: XCTestCase {
         XCTAssertGreaterThan(next, now)
         XCTAssertLessThan(next.timeIntervalSince(now), 40 * 86400)
     }
+
+    func testPastResetAsksToRefresh() {
+        let now = Date(timeIntervalSince1970: 1_782_950_400)
+        XCTAssertEqual(ResetCopy.format(reset: now.addingTimeInterval(-60), now: now), "Refresh")
+        XCTAssertNil(ResetCopy.compact(reset: now.addingTimeInterval(-60), now: now))
+    }
+
+    func testMissingResetCopy() {
+        XCTAssertEqual(ResetCopy.format(reset: nil), "No reset time")
+        XCTAssertNil(ResetCopy.compact(reset: nil))
+    }
+
+    func testMinutesStayRelative() {
+        let now = Date(timeIntervalSince1970: 1_782_950_400)
+        let text = ResetCopy.format(reset: now.addingTimeInterval(45 * 60), now: now)
+        XCTAssertTrue(text.contains("45"), text)
+        XCTAssertTrue(text.lowercased().contains("min"), text)
+    }
+
+    func testCompactBoundaryIsSixHours() {
+        let now = Date(timeIntervalSince1970: 1_782_950_400)
+        XCTAssertEqual(ResetCopy.compact(reset: now.addingTimeInterval(30), now: now), "1m")
+        XCTAssertEqual(ResetCopy.compact(reset: now.addingTimeInterval(5 * 3600 + 59 * 60), now: now), "5h")
+        XCTAssertNil(ResetCopy.compact(reset: now.addingTimeInterval(6 * 3600), now: now))
+    }
+
+    func testUpdatedJustNowAndHours() {
+        let now = Date(timeIntervalSince1970: 1_782_950_400)
+        XCTAssertEqual(ResetCopy.updated(now.addingTimeInterval(-20), now: now), "Just now")
+        let hours = ResetCopy.updated(now.addingTimeInterval(-3 * 3600), now: now)
+        XCTAssertTrue(hours.contains("3"), hours)
+    }
 }

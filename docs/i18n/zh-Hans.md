@@ -12,6 +12,8 @@ CheckUsage 在菜单栏运行，也可把深色胶囊钉在任意边缘。每个
 
 **默认：** 右上角、**锁定位置**、点击外部关闭，`⌥⌘U` 显示/隐藏胶囊，`⌥⌘L` 打开上次额度。解锁后可拖动并吸附到边缘。Cursor 的重置是月度账单日，不是「本周六」。
 
+**状态：** 持续维护。非官方用量接口可能随时失效，见 [SECURITY.md](../../SECURITY.md) 与 [CHANGELOG.md](../../CHANGELOG.md)。
+
 ## 这是什么
 
 给同时跑多个 AI 编程助手的人用的一眼仪表。菜单栏可显示最紧的剩余百分比。圆环在边缘。细节靠悬停或点击。它不是账单本，也不会去扫本地聊天记录。
@@ -96,6 +98,10 @@ make app
 ```
 
 见 [CONTRIBUTING.md](../../CONTRIBUTING.md)。
+
+## 文档
+
+[架构](../ARCHITECTURE.md) · [贡献](../../CONTRIBUTING.md) · [安全](../../SECURITY.md) · [Changelog](../../CHANGELOG.md) · [Issues / 路线图](https://github.com/sysrootix/check-usage/issues)
 
 ## 许可
 

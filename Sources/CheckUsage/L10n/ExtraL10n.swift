@@ -87,6 +87,9 @@ enum ExtraL10n {
             "auto_hide": "Tuck widget off the edge",
             "auto_hide_off": "Keep widget on screen",
             "auto_hide_help": "A small arrow stays on the edge. Hover to slide the widget out; move away and it tucks back.",
+            "github_repo": "GitHub",
+            "github_issues": "Report an issue",
+            "github_license": "License",
         ],
         "ru": [
             "widget": "Виджет",
@@ -173,6 +176,9 @@ enum ExtraL10n {
             "auto_hide": "Прятать виджет за край",
             "auto_hide_off": "Не прятать за край",
             "auto_hide_help": "На краю остаётся стрелка. Навели мышь — выезжает, увели — уезжает обратно.",
+            "github_repo": "GitHub",
+            "github_issues": "Сообщить о проблеме",
+            "github_license": "Лицензия",
         ],
         "zh-Hans": [
             "widget": "小组件",
@@ -248,6 +254,9 @@ enum ExtraL10n {
             "auto_hide": "将小组件藏到屏幕边缘",
             "auto_hide_off": "保持小组件在屏幕上",
             "auto_hide_help": "边缘留下箭头。悬停滑出，移开后收起。",
+            "github_repo": "GitHub",
+            "github_issues": "反馈问题",
+            "github_license": "许可证",
         ],
         "ja": [
             "widget": "ウィジェット",
@@ -323,6 +332,9 @@ enum ExtraL10n {
             "auto_hide": "端に隠す",
             "auto_hide_off": "画面上に置く",
             "auto_hide_help": "端に矢印が残ります。重ねると出て、離すと隠れます。",
+            "github_repo": "GitHub",
+            "github_issues": "問題を報告",
+            "github_license": "ライセンス",
         ],
         "de": [
             "widget": "Widget",
@@ -398,6 +410,9 @@ enum ExtraL10n {
             "auto_hide": "Widget hinter den Rand schieben",
             "auto_hide_off": "Widget sichtbar lassen",
             "auto_hide_help": "Am Rand bleibt ein Pfeil. Darüberfahren holt ihn hervor, Wegfahren versteckt ihn.",
+            "github_repo": "GitHub",
+            "github_issues": "Problem melden",
+            "github_license": "Lizenz",
         ],
         "es": [
             "widget": "Widget",
@@ -473,6 +488,9 @@ enum ExtraL10n {
             "auto_hide": "Esconder el widget en el borde",
             "auto_hide_off": "Dejar el widget en pantalla",
             "auto_hide_help": "Queda una flecha en el borde. Al pasar el ratón sale; al alejarlo se esconde.",
+            "github_repo": "GitHub",
+            "github_issues": "Informar de un problema",
+            "github_license": "Licencia",
         ],
         "fr": [
             "widget": "Widget",
@@ -548,6 +566,9 @@ enum ExtraL10n {
             "auto_hide": "Glisser le widget hors de l’écran",
             "auto_hide_off": "Garder le widget visible",
             "auto_hide_help": "Une flèche reste au bord. Survol pour le sortir, souris ailleurs pour le ranger.",
+            "github_repo": "GitHub",
+            "github_issues": "Signaler un problème",
+            "github_license": "Licence",
         ],
         "pt-BR": [
             "widget": "Widget",
@@ -623,6 +644,9 @@ enum ExtraL10n {
             "auto_hide": "Esconder o widget na borda",
             "auto_hide_off": "Manter o widget na tela",
             "auto_hide_help": "Fica uma seta na borda. Passe o mouse para sair; afaste para esconder.",
+            "github_repo": "GitHub",
+            "github_issues": "Relatar um problema",
+            "github_license": "Licença",
         ],
         "ko": [
             "widget": "위젯",
@@ -698,6 +722,9 @@ enum ExtraL10n {
             "auto_hide": "화면 끝으로 숨기기",
             "auto_hide_off": "화면에 그대로 두기",
             "auto_hide_help": "가장자리에 화살표가 남습니다. 올리면 나오고, 치우면 다시 숨습니다.",
+            "github_repo": "GitHub",
+            "github_issues": "이슈 등록",
+            "github_license": "라이선스",
         ],
     ]
 }

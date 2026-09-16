@@ -1,12 +1,24 @@
 # CheckUsage
 
+[![CI](https://github.com/sysrootix/check-usage/actions/workflows/ci.yml/badge.svg)](https://github.com/sysrootix/check-usage/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![macOS 14+](https://img.shields.io/badge/macOS-14%2B-black.svg)](https://github.com/sysrootix/check-usage#requirements)
+[![Swift 6](https://img.shields.io/badge/Swift-6-F05138.svg)](https://www.swift.org)
+[![Release v1.0.0](https://img.shields.io/github/v/release/sysrootix/check-usage?label=release)](https://github.com/sysrootix/check-usage/releases/tag/v1.0.0)
+
 **Language:** [English](README.md) · [Русский](docs/i18n/ru.md) · [简体中文](docs/i18n/zh-Hans.md) · [日本語](docs/i18n/ja.md) · [Deutsch](docs/i18n/de.md) · [Español](docs/i18n/es.md) · [Français](docs/i18n/fr.md) · [Português (Brasil)](docs/i18n/pt-BR.md) · [한국어](docs/i18n/ko.md)
 
 Usage limits for the AI tools already signed in on your Mac — a slim **edge pill** with circular rings, plus a detail popover. No extra login. No telemetry.
 
+**Status:** actively maintained. Most subscription meters use unofficial endpoints the official apps already call; they can change without notice. See [SECURITY.md](SECURITY.md) and [CHANGELOG.md](CHANGELOG.md).
+
 <p align="center">
   <img src="docs/screenshot.jpg" alt="CheckUsage pill and Cursor limits popover" width="720">
 </p>
+
+## Why CheckUsage
+
+Claude, Cursor, Codex, Copilot, Gemini, Grok and the rest each hide remaining quota in a different dashboard. If you run several agents on one Mac, you find out you are out of limit only after a request fails. CheckUsage is a glanceable instrument: it reuses the sessions already on this Mac and puts the meters on the screen edge. It is not a cost ledger and it does not scrape local chat transcripts.
 
 CheckUsage lives in the menu bar and can pin a dark pill to any screen edge. Each ring is a real provider mark. Hover a ring to peek at the windows; click to pin. The popover shows session / weekly / plan usage, when it resets, and a spend-pace card: how much of the cycle is gone, whether you’re ahead of the plan, and the date this rate would empty the limit.
 
@@ -109,17 +121,32 @@ English · Русский · 简体中文 · 日本語 · Deutsch · Español ·
 - No analytics, crash reporters, or accounts.
 - Settings live in `~/Library/Application Support/CheckUsage/settings.json`. Reinstalling the app does not delete that file.
 
+How to report a vulnerability: [SECURITY.md](SECURITY.md).
+
+## Roadmap
+
+Ideas and provider-breakage reports live in [GitHub Issues](https://github.com/sysrootix/check-usage/issues). Prefer an issue before reverse-engineering a new unofficial API. Never attach tokens.
+
 ## Development
 
 ```bash
 make project    # regenerate CheckUsage.xcodeproj
 make test
 make app        # release .app in dist/
+make zip        # dist/CheckUsage.app.zip (also built on v* tags)
 ```
 
 Parser fixtures live in `Tests/CheckUsageTests`. Provider HTTP is isolated in `UsageService`; JSON shapes are covered without hitting the network.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the PR checklist, branch naming, and how to cut a release (`git tag v1.x.x` then `git push --tags`). Layout of App / Providers / parsers / Settings: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## Community
+
+- [Contributing](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security policy](SECURITY.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Changelog](CHANGELOG.md)
 
 ## License
 

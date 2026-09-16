@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/sysrootix/check-usage/blob/main/SECURITY.md
+    about: Report token leakage or other security issues privately — do not file a public issue.
+  - name: Changelog
+    url: https://github.com/sysrootix/check-usage/blob/main/CHANGELOG.md
+    about: What shipped in each release.

@@ -12,6 +12,8 @@ CheckUsage vive en la barra de menú y puede fijar una píldora oscura en cualqu
 
 **Por defecto:** arriba a la derecha y **bloqueada**, se cierra al clic fuera, `⌥⌘U` muestra/oculta el widget, `⌥⌘L` abre los últimos límites. Desbloquea para arrastrar; se ajusta al borde. El reinicio de Cursor es la fecha de facturación mensual, no «este sábado».
 
+**Estado:** se mantiene activamente. Los medidores no oficiales pueden romperse sin aviso; véase [SECURITY.md](../../SECURITY.md) y [CHANGELOG.md](../../CHANGELOG.md).
+
 ## Qué es
 
 Un instrumento de un vistazo para quien corre varios agentes de IA en un Mac. El peor resto puede ir en la barra. Los anillos, en el borde. El detalle, al pasar o al clic. No es un libro de costes ni lee chats locales.
@@ -96,6 +98,10 @@ make app
 ```
 
 Ver [CONTRIBUTING.md](../../CONTRIBUTING.md).
+
+## Documentación
+
+[Arquitectura](../ARCHITECTURE.md) · [Contributing](../../CONTRIBUTING.md) · [Seguridad](../../SECURITY.md) · [Changelog](../../CHANGELOG.md) · [Issues / hoja de ruta](https://github.com/sysrootix/check-usage/issues)
 
 ## Licencia
 

@@ -12,6 +12,8 @@ CheckUsage는 메뉴 막대에 상주하며 어두운 필을 아무 가장자리
 
 **기본값:** 오른쪽 위, **위치 잠금**, 바깥을 클릭하면 닫힘. `⌥⌘U`는 위젯, `⌥⌘L`은 마지막 한도. 잠금을 풀면 드래그되며 가장자리에 붙습니다. Cursor 초기화는 월간 청구일이며 “이번 토요일”이 아닙니다.
 
+**상태:** 계속 유지보수 중입니다. 비공식 미터는 예고 없이 깨질 수 있습니다. [SECURITY.md](../../SECURITY.md), [CHANGELOG.md](../../CHANGELOG.md)를 보세요.
+
 ## 무엇인가
 
 한 대의 Mac에서 여러 AI 코딩 에이전트를 쓰는 사람을 위한 한눈에 보는 계기입니다. 가장 빠듯한 잔량은 메뉴 막대에, 링은 가장자리에, 상세는 호버나 클릭으로. 가계부가 아니고 로컬 채팅을 읽지도 않습니다.
@@ -96,6 +98,10 @@ make app
 ```
 
 [CONTRIBUTING.md](../../CONTRIBUTING.md)를 보세요.
+
+## 문서
+
+[아키텍처](../ARCHITECTURE.md) · [Contributing](../../CONTRIBUTING.md) · [보안](../../SECURITY.md) · [Changelog](../../CHANGELOG.md) · [Issues / 로드맵](https://github.com/sysrootix/check-usage/issues)
 
 ## 라이선스
 
